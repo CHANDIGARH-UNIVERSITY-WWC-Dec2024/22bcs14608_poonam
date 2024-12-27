@@ -1,5 +1,5 @@
 # 22bcs14608_poonam
-Smart Traffic Management System
+# Smart Traffic Management System
 A full-stack web application that simulates traffic data from sensors, stores the data in MongoDB, and displays real-time traffic updates using a dashboard. This system allows traffic management without physical hardware, simulating traffic data and visualizing it in real-time.
 
 Features
