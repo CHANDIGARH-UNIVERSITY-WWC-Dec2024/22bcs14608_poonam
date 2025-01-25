@@ -1,114 +1,46 @@
-# 22bcs14608_poonam
 # Smart Traffic Management System
-A full-stack web application that simulates traffic data from sensors, stores the data in MongoDB, and displays real-time traffic updates using a dashboard. This system allows traffic management without physical hardware, simulating traffic data and visualizing it in real-time.
-
-Features
-Real-Time Traffic Data: Traffic flow data is simulated every 2 seconds and displayed in real-time.
-MongoDB Database: Traffic data is stored in a MongoDB database.
-Socket.io: Real-time communication is achieved using Socket.io to push updates to the frontend.
-React Dashboard: A dynamic dashboard displays traffic data with updates every time new data is received from the backend.
-Node.js/Express.js Backend: Handles the API for traffic data and simulates sensor data.
-Tech Stack
-Frontend: React.js
-Backend: Node.js, Express.js, MongoDB, Socket.io
-Database: MongoDB
-Real-Time Communication: Socket.io
-Simulated Data: Using Axios for sending traffic data
-Installation
-1. Clone the Repository
-bash
-
-git clone https://github.com/22bcs14608_poonam/smart-traffic-system.git
-cd smart-traffic-system
-2. Backend Setup
-2.1. Install Dependencies
-Navigate to the root of the project and install the necessary backend dependencies:
-
-bash
-npm install
-2.2. Run MongoDB
-Ensure you have MongoDB installed and running locally. If you don't have MongoDB installed, you can follow the MongoDB installation guide.
-
-Start MongoDB:
-
-bash
-
-mongod
-2.3. Start the Backend Server
-To run the backend server, use the following command:
-
-bash
-
-node server.js
-The backend server will be running on http://localhost:5000.
-
-2.4. Simulate Sensor Data
-To simulate traffic data being sent to the backend, run the following script in a separate terminal:
-
-bash
-
-node simulateSensors.js
-This will send random traffic data to the backend every 2 seconds.
-
-3. Frontend Setup
-3.1. Install React Dependencies
-Navigate to the client directory and install the frontend dependencies:
-
-bash
-
-cd client
-npm install
-3.2. Start the React Application
-To start the React application, run:
-
-bash
-
-npm start
-The React app will be running on http://localhost:3000.
-
-4. Access the Dashboard
-Once the backend server and the React application are running, open your browser and navigate to:
-
-bash
-
-http://localhost:3000
-You will be able to see the real-time traffic data on the dashboard.
-
-Project Structure
-perl
-
-smart-traffic-system/
-
-├── client/               # React app folder
-
-│   ├── node_modules/     # React dependencies
-
-│   ├── public/           # Public folder
-
-│   ├── src/              # React source code
-
-│   │   ├── App.js        # React component
-
-│   │   ├── index.js      # React entry point
-
-│   ├── package.json      # React dependencies
-
-│   └── package-lock.json
-
-├── server.js             # Backend server (Node.js & Express)
-
-├── simulateSensors.js    # Script to simulate sensor data
-
-├── package.json          # Backend dependencies
-
-└── package-lock.json     # Backend lock file
+This Project presents a solution to deal with traffic congestion in metropolitan cities and presents a central traffic control system which runs on a pretty simple algorithm.
+Our product would include the entire mechanism of detection of congestion and increasing the red light duration of traffic signals in the crossings.
+### Directions to use this repo:
+   1.Clone the github repo by running the command **git clone https://github.com/saikat021/traffic.git** or by downloading .zip\
+   2.Install all the python dependencies by running **pip install -r requirements.txt**\
+   3.Run the command **python main.py**\
+   4.When the login page opens, enter name=admin           password=1234\
+   5.The ui is up and running....
+## How it Works
+Each traffic crossing in a city would fall on a node, if for example we are constantly keeping a  graph (road network) under surveillance then 9 images would come from these crossings at regular intervals of time (for nodes=9).These 9 images are fed into a system which uses **state of the art computer vision to determine the level of congestion** in these crossings by various parameters like count of heavy vehicles. Now if for example we get crossing denoted by (1,1) as congested then the corresponding red light duration in the neighboring junctions increases and this inturn reduces the intake of vehicles in the congested junction and allows the vehicles in the congested junction some time to disperse.
 
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+   ![](read.PNG)
 
-Acknowledgments
-Socket.io for real-time communication.
-MongoDB for database management.
-React.js for the dynamic frontend.
-Express.js for building the backend API
+## UI 
+1. Since we are considering static images and not the CCTV footages, so the images get changed after every 5secs.
+2. The change depicts the present crowding in the particular junction.
+3. To get the location,we use Here Maps API.
+
+### LOGIN PAGE:
+   
+   ![](login.png)
+   
+### AT TIMEFRAME 0 SECS:
+
+   ![](time0.png)
+   
+### AT TIMEFRAME 5 SECS:
+
+   ![](time5.png)
+
+## Technologies Used
+
+1.YOLO Version3 for Object Detection
+
+2.Here Maps API
+
+3.Tkinter(Python) for UI
+
+## Author
+[Rishav Dhar](https://github.com/iamrishav111)
+
+[Saikat Chakraborty](https://github.com/saikat021)
+
+[Chiradeep Dey](https://github.com/chiradeepdey)
